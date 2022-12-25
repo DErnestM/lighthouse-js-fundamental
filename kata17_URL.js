@@ -38,3 +38,28 @@ console.log(urlDecode("city=Vancouver&weather=lots%20of%20rain").weather);
 {city: "Vancouver", weather: "lots of rain"}
 "lots of rain"
 */
+
+
+/*
+
+const urlDecode = function(text) {
+  let output = {};
+
+  const processKeyValuePair = function(keyValue) {
+    keyValue = keyValue.replace(/%20/g, " ");
+    let key = keyValue.slice(0, keyValue.indexOf("="));
+    let value = keyValue.slice(keyValue.indexOf("=") + 1);
+    output[key] = value;
+  };
+
+  if (text.includes("&")) {
+    let keyValuePairs = text.split("&");
+    keyValuePairs.forEach(processKeyValuePair);
+  } else {
+    processKeyValuePair(text);
+  }
+
+  return output;
+};
+
+*/
